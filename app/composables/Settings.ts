@@ -38,9 +38,9 @@ export interface AppSettingsState {
 }
 
 const DEFAULT_PROFILE: GameProfile = {
-    themeColor: "#fbc02d",
+    themeColor: "#007aff",
     textColor: "light",
-    routeColor: "#22d3ee",
+    routeColor: "#007aff",
     units: "metric",
     ownedDlcs: Array.from({ length: 10 }, (_, i) => i + 1),
     lastDestination: null,
@@ -54,13 +54,13 @@ const DEFAULT_SETTINGS: AppSettingsState = {
     profiles: {
         ets2: {
             ...DEFAULT_PROFILE,
-            themeColor: "#fbc02d",
+            themeColor: "#007aff",
             textColor: "dark",
             units: "metric",
         },
         ats: {
             ...DEFAULT_PROFILE,
-            themeColor: "#d32f2f",
+            themeColor: "#007aff",
             ownedDlcs: Array.from({ length: 16 }, (_, i) => i + 1),
             units: "imperial",
         },

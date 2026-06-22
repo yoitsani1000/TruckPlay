@@ -1,5 +1,4 @@
 import type { Map as MapLibreGl, StyleSpecification } from "maplibre-gl";
-import { blendWithBg, lightenColor } from "~/assets/utils/shared/colors";
 import { BlobSource } from "~/assets/utils/shared/BlobSource";
 
 export async function initializeMap(
@@ -57,7 +56,7 @@ export async function initializeMap(
             {
                 id: "background",
                 type: "background",
-                paint: { "background-color": "#272d39" },
+                paint: { "background-color": "#c0e4a6" },
             },
             {
                 id: "lines",
@@ -65,7 +64,7 @@ export async function initializeMap(
                 source: `${settings.value.selectedGame}`,
                 "source-layer": `${settings.value.selectedGame}`,
                 paint: {
-                    "line-color": "#3d546e",
+                    "line-color": "#b3b5b9",
                     "line-width": 2,
                 },
             },
@@ -143,7 +142,7 @@ export async function initializeMap(
             source: "all-data",
             "source-layer": "water",
             paint: {
-                "line-color": "#1e3a5f",
+                "line-color": "#5cb8d6",
                 "line-width": [
                     "interpolate",
                     ["linear"],
@@ -164,8 +163,8 @@ export async function initializeMap(
             source: "all-data",
             "source-layer": "water",
             paint: {
-                "fill-color": "#24467b",
-                "fill-opacity": 0.6,
+                "fill-color": "#8ddbf6",
+                "fill-opacity": 0.85,
             },
         });
 
@@ -180,7 +179,7 @@ export async function initializeMap(
                 "line-cap": ["step", ["zoom"], "butt", 8, "round"],
             },
             paint: {
-                "line-color": "#4a5f7a",
+                "line-color": "#b3b5b9",
                 "line-width": [
                     "interpolate",
                     ["linear"],
@@ -206,37 +205,14 @@ export async function initializeMap(
                 source: "all-data",
                 "source-layer": "mapareas",
                 paint: {
-                    "fill-color": [
-                        "match",
-                        ["get", "color"],
-                        0,
-                        "#3d546e",
-                        1,
-                        "#4a5f7a",
-                        2,
-                        "#556b7f",
-                        3,
-                        "#6b7f93",
-                        4,
-                        "#7d93a7",
-                        "#3d546e",
-                    ],
-                    "fill-opacity": 0.5,
+                    "fill-color": "#fef5e1",
+                    "fill-opacity": 0.7,
                 },
             },
             "lines",
         );
 
         // PREFABS FOR SERVICE AREAS     ETC
-
-        const color0 = blendWithBg(
-            lightenColor(activeSettings.value.themeColor, 0.3),
-            0.6,
-        );
-        const color1 = blendWithBg(
-            lightenColor(activeSettings.value.themeColor, 0),
-            0.6,
-        );
         map.addLayer(
             {
                 id: "prefab-zones",
@@ -244,19 +220,7 @@ export async function initializeMap(
                 source: "all-data",
                 "source-layer": "prefabs",
                 paint: {
-                    "fill-color": [
-                        "match",
-                        ["get", "color"],
-                        0,
-                        color0,
-                        1,
-                        color0,
-                        2,
-                        color1,
-                        3,
-                        color0,
-                        "#3d546e",
-                    ],
+                    "fill-color": "#fef5e1",
                 },
                 minzoom: 5,
             },
@@ -279,7 +243,9 @@ export async function initializeMap(
                 "text-ignore-placement": true,
             },
             paint: {
-                "text-color": "#ffffff",
+                "text-color": "#3a3a3c",
+                "text-halo-color": "#ffffff",
+                "text-halo-width": 1,
             },
             minzoom: 8.2,
         });
@@ -292,9 +258,9 @@ export async function initializeMap(
                 source: "all-data",
                 "source-layer": "countries",
                 paint: {
-                    "line-color": "#3d546e",
+                    "line-color": "#c8c0ad",
                     "line-width": 2,
-                    "line-opacity": 0.4,
+                    "line-opacity": 0.6,
                 },
             },
             "lines",
@@ -308,9 +274,9 @@ export async function initializeMap(
                 source: "all-data",
                 "source-layer": "states",
                 paint: {
-                    "line-color": "#3d546e",
+                    "line-color": "#c8c0ad",
                     "line-width": 2,
-                    "line-opacity": 0.4,
+                    "line-opacity": 0.6,
                 },
             },
             "lines",
@@ -390,10 +356,10 @@ export async function initializeMap(
                 "text-ignore-placement": true,
             },
             paint: {
-                "text-color": "#ffffff",
+                "text-color": "#1c1c1e",
 
                 "text-halo-color": "#ffffff",
-                "text-halo-width": 0.3,
+                "text-halo-width": 1.1,
             },
             minzoom: 6,
             maxzoom: 8,
@@ -416,9 +382,9 @@ export async function initializeMap(
                 "text-ignore-placement": true,
             },
             paint: {
-                "text-color": "#ffffff",
+                "text-color": "#1c1c1e",
                 "text-halo-color": "#ffffff",
-                "text-halo-width": 0.5,
+                "text-halo-width": 1.2,
             },
 
             minzoom: 6,
@@ -441,10 +407,10 @@ export async function initializeMap(
                 "text-ignore-placement": true,
             },
             paint: {
-                "text-color": "#ffffff",
+                "text-color": "#1c1c1e",
                 "text-halo-color": "#ffffff",
-                "text-halo-width": 0.5,
-                "text-opacity": 0.5,
+                "text-halo-width": 1.2,
+                "text-opacity": 0.6,
             },
             minzoom: 5,
             maxzoom: 6,

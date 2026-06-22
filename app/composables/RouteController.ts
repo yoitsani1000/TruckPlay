@@ -501,9 +501,7 @@ export const useRouteController = (
         if (map.value.getSource("route-line")) return;
 
         if (!map.value.hasImage("destination-icon")) {
-            const pinImg = await generateDestinationIcon(
-                activeSettings.value.themeColor,
-            );
+            const pinImg = await generateDestinationIcon("#ff3b30");
             map.value.addImage("destination-icon", pinImg, { pixelRatio: 2.5 });
         }
 
@@ -512,6 +510,33 @@ export const useRouteController = (
             data: { type: "FeatureCollection", features: [] },
         });
 
+        // Thin outline rendered underneath the main route line
+        map.value.addLayer(
+            {
+                id: "route-line-casing",
+                type: "line",
+                source: "route-line",
+                layout: { "line-join": "round", "line-cap": "round" },
+                paint: {
+                    "line-color": "#004de9",
+                    "line-width": [
+                        "interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        10,
+                        9.5,
+                        10.2,
+                        10.5,
+                        10.5,
+                        7.5,
+                        11.5,
+                        12.5,
+                    ],
+                },
+            },
+            "all-sprites",
+        );
+
         map.value.addLayer(
             {
                 id: "route-line",
@@ -519,7 +544,7 @@ export const useRouteController = (
                 source: "route-line",
                 layout: { "line-join": "round", "line-cap": "round" },
                 paint: {
-                    "line-color": activeSettings.value.routeColor,
+                    "line-color": "#0c97fe",
                     "line-width": [
                         "interpolate",
                         ["linear"],
