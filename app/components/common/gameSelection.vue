@@ -25,6 +25,7 @@ const selectCard = (game: "ats" | "ets2" | null) => {
             game-name="ets2"
             :class="{ 'is-selected': settings.selectedGame === 'ets2' }"
             :width="width"
+            :disabled="true"
         >
             <template #icon>
                 <Icon name="map:museum" size="22" />

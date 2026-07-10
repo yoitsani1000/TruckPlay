@@ -4,12 +4,21 @@ $button-padding: 8px 10px;
  * GENERAL
  */
 .settings-panel {
-    background-color: $primaryColor;
+    background-color: #f2f2f7;
     height: 100dvh;
     width: 100dvw;
 
     padding-top: 1.8rem;
     font-weight: 600;
+    color: #1c1c1e;
+
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
 
     display: flex;
     flex-direction: column;
@@ -25,7 +34,7 @@ $button-padding: 8px 10px;
 .setting {
     padding-left: 2rem;
     padding-right: 2rem;
-    color: $white-font-text;
+    color: #1c1c1e;
 
     font-size: 1.8rem;
 }
@@ -56,14 +65,14 @@ $button-padding: 8px 10px;
     min-width: 150px;
     max-width: 200px;
 
-    background: $default-background-color-dark;
+    background: #e5e5ea;
     border-radius: 5px;
 
     padding: $button-padding;
 
     font-weight: 700;
     font-size: 1.6rem;
-    color: $white-font-text;
+    color: #1c1c1e;
 
     cursor: pointer;
 }
@@ -112,7 +121,7 @@ $button-padding: 8px 10px;
 .separator {
     height: 2px;
     width: 100%;
-    background-color: $secondaryColor;
+    background-color: rgba(0, 0, 0, 0.12);
     border-radius: 3px;
 
     margin-bottom: 1.8rem;
@@ -124,7 +133,7 @@ $button-padding: 8px 10px;
     width: 90%;
     align-self: center;
     flex-shrink: 0;
-    background-color: $secondaryColor;
+    background-color: rgba(0, 0, 0, 0.12);
     opacity: 0.7;
     border-radius: 3px;
 }
@@ -140,8 +149,8 @@ $button-padding: 8px 10px;
     transition: 0.2s ease all;
 
     &.default-color {
-        background-color: $default-background-color-dark;
-        color: $white-font-text;
+        background-color: #e5e5ea;
+        color: #1c1c1e;
     }
 
     &.increase-decrease {
@@ -163,11 +172,14 @@ $button-padding: 8px 10px;
 }
 
 .cancel-timer-icon {
-    color: $red-color;
+    color: #ff3b30;
 }
 
 .actual-truck-preview {
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
 }
 
 /**
@@ -223,12 +235,12 @@ $button-padding: 8px 10px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .color-picker {
-    background-color: $secondaryColor;
+    background-color: #e5e5ea;
     border-radius: 4px;
     padding: 4px;
 }

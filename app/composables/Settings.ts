@@ -49,7 +49,7 @@ const DEFAULT_PROFILE: GameProfile = {
 };
 
 const DEFAULT_SETTINGS: AppSettingsState = {
-    selectedGame: null,
+    selectedGame: "ats",
     savedIP: null,
     profiles: {
         ets2: {
@@ -106,7 +106,7 @@ export const useSettings = () => {
 
         document.documentElement.style.setProperty(
             "--app-font",
-            activeSettings.value.fontFamily,
+            "Inter",
         );
 
         document.documentElement.style.setProperty(
@@ -163,6 +163,16 @@ export const useSettings = () => {
         } else {
             settings.value = { ...DEFAULT_SETTINGS };
         }
+
+        // Force-lock values that must never drift from stale localStorage
+        settings.value.selectedGame = "ats";
+        settings.value.profiles.ats.themeColor = "#007aff";
+        settings.value.profiles.ats.routeColor = "#007aff";
+        settings.value.profiles.ats.textColor = "light";
+        settings.value.profiles.ats.units = "imperial";
+        settings.value.profiles.ets2.themeColor = "#007aff";
+        settings.value.profiles.ets2.routeColor = "#007aff";
+        document.documentElement.style.setProperty("--app-font", "Inter");
 
         applySideEffects();
     };

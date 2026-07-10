@@ -144,7 +144,7 @@ $compact-bar-height: 35px;
 }
 
 .chevron-icon {
-    color: #6e6e73;
+    color: #ffffff;
 }
 
 .hide-sheet {
@@ -154,7 +154,12 @@ $compact-bar-height: 35px;
         display: flex;
         gap: 2px;
         padding: 4px 10px;
-        color: #6e6e73;
+        color: #ffffff;
+
+        background-color: #007aff;
+        height: auto;
+        box-shadow: none;
+        border-radius: 8px;
     }
 }
 

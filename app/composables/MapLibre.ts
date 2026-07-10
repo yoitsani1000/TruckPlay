@@ -131,6 +131,28 @@ export async function initializeMap(
             url: "pmtiles://all-data",
         });
 
+        // CITY BOUNDARIES (generated from cities.json's area boxes, see
+        // generate-city-boundaries.cjs). Inserted just above the background
+        // and below every other layer, so roads/water/parking still draw
+        // correctly on top of it instead of being covered.
+        map.addSource("city-boundaries", {
+            type: "geojson",
+            data: `${baseUrl}/data/${settings.value.selectedGame}/map-data/city-boundaries.geojson`,
+        });
+
+        map.addLayer(
+            {
+                id: "city-boundaries",
+                type: "fill",
+                source: "city-boundaries",
+                paint: {
+                    "fill-color": "#ece7d8",
+                    "fill-opacity": 0.9,
+                },
+            },
+            "lines",
+        );
+
         ////
         //// LAYERS FOR DISPLAYING
         //// FROM SOURCES

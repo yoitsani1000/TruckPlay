@@ -73,7 +73,7 @@ const goToDesktopIndex = () => {
 const goHome = () => {
     if (isElectron.value) currentView.value = "desktopHome";
     if (isMobile.value) currentView.value = "mobileHome";
-    if (isWeb.value) currentView.value = "chooseGame";
+    if (isWeb.value) currentView.value = "map";
 };
 </script>
 

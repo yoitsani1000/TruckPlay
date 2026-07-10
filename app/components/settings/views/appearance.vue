@@ -19,7 +19,10 @@ async function updatePreviewIcon() {
 }
 
 function toggleTextColor() {
-    updateProfile("textColor", isTextThemeLight.value ? "dark" : "light");
+    // Locked for now: the light/dark text setting predates the fixed
+    // light theme and was causing inconsistent text colors in places like
+    // the GPS trip card's expand/hide buttons. The switch stays visible
+    // for future use, but no longer changes anything.
 }
 
 function toggleDriveInfoPanel() {

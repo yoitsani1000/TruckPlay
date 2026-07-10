@@ -65,6 +65,7 @@ function toggleDlcPanel() {
             <SegmentedControl
                 :left-option="t('settings.metric')"
                 :right-option="t('settings.imperial')"
+                :is-same-color="true"
                 @connect="toggleUnits"
                 size="normal"
                 :active="isMetric"
@@ -84,10 +85,10 @@ function toggleDlcPanel() {
                 variant="none"
                 class="selector"
                 :ui="{
-                    trailingIcon: 'shrink-0 size-[20px] text-white !px-6',
-                    content: 'bg-[#222e3c] shadow-xl rounded-md',
-                    item: 'flex items-center justify-between text-[1.6rem] font-BOLD !py-2 !px-3 text-[#f2f2f2] data-[highlighted]:bg-[#3d546e] rounded cursor-pointer transition-colors',
-                    itemTrailingIcon: 'text-white',
+                    trailingIcon: 'shrink-0 size-[20px] text-[#1c1c1e] !px-6',
+                    content: 'bg-white shadow-xl rounded-md border border-[#d1d1d6]',
+                    item: 'flex items-center justify-between text-[1.6rem] font-BOLD !py-2 !px-3 text-[#1c1c1e] data-[highlighted]:bg-[#e5e5ea] rounded cursor-pointer transition-colors',
+                    itemTrailingIcon: 'text-[#1c1c1e]',
                 }"
             >
                 <template #default>

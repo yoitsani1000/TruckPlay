@@ -36,8 +36,9 @@
     .icon-btn {
         flex: 1;
         height: fit-content;
-        padding: 0;
-        color: #8e8e93;
+        padding: 4px;
+        border-radius: 8px;
+        color: #ffffff;
     }
 
     &.preview {

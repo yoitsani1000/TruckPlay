@@ -43,6 +43,8 @@ export const useMapCamera = (map: Ref<Map | null>) => {
             markerEl.style.backgroundSize = "contain";
             markerEl.style.backgroundRepeat = "no-repeat";
             markerEl.style.backgroundPosition = "center";
+            markerEl.style.borderRadius = "50%";
+            markerEl.style.overflow = "hidden";
             markerEl.style.pointerEvents = "none";
             markerEl.style.zIndex = "10";
             markerEl.style.willChange = "transform";
